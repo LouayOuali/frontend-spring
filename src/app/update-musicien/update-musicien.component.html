@@ -1,0 +1,32 @@
+<div class="container">
+    <div>
+        <h2>Modifier un Musicien :</h2>
+    </div>
+    <form>
+        
+            <div class="col-sm-2 col-md-2 col-lg-2"> 
+                <label>ID Musicien</label> 
+                <input readonly type="number"
+                [(ngModel)]="currentMusicien.idMusicien" name="idMusicien" class="form-control"> 
+            </div>
+        
+        <div class="col-sm-4 col-md-4 col-lg-4"> <label>Nom Musicien</label> <input type="text"
+                [(ngModel)]="currentMusicien.nomMusicien" name="nomMusicien" class="form-control"> </div>
+        <div class="col-sm-2 col-md-2 col-lg-2"> <label>Annes d'experience</label> <input type="number"
+                [(ngModel)]="currentMusicien.anneeExp" name="anneeExp" class="form-control"> </div>
+        <div class="col-sm-2 col-md-2 col-lg-2"> <label>Instrument</label> <input type="text"
+                [(ngModel)]="currentMusicien.instrument" name="instrument" class="form-control"> </div>
+        <div class="col-sm-2 col-md-2 col-lg-2"> <label>Salaire</label> <input type="number"
+                [(ngModel)]="currentMusicien.salaire" name="salaire" class="form-control"> </div>
+
+        <div class="col-sm-2 col-md-2 col-lg-2"> <label> Band</label>
+            <select class="form-control form-control-lg" id="idBand" name="idBand" [(ngModel)]="updatedBandId">
+                <option *ngFor="let band of bands" [value]="band.idBand">
+                    {{band.nomBand}}
+                </option>
+            </select>
+        </div>
+        <div class="mt-2"> <button type="submit" (click)="updateMusicien()" class="btn btn-success">Modifer</button>
+        </div>
+    </form>
+</div>
